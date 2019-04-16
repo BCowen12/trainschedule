@@ -20,10 +20,8 @@ var left;
     var name = $("#name-input").val().trim();
     var where = $("#where-input").val().trim();
     var time = $("#startTime-input").val().trim();
-    console.log(time);
     
     var rate = $("#rate-input").val().trim();
-    console.log(rate);
 
 
     database.ref().push({
@@ -32,6 +30,8 @@ var left;
      time: time,
       rate: rate
     });
+
+    document.getElementById("nTrain").reset();
   });
 
   // var now = moment().valueOf();
