@@ -51,6 +51,7 @@ function makeRow(response) {
     </tr>`);
 }
 
+
 database.ref().on("child_added", function(childSnapshot) {
   var response = childSnapshot.val();
   makeRow(response);
@@ -62,6 +63,7 @@ function next(time, rate) {
 
   if (now.isBefore(startTime)) {
     nextT = startTime;
+    left = (now.diff(startTime, "minutes")*-1);
   } else {
     var diff = startTime.diff(now, "minutes");
     left = parseInt(rate) + (diff % rate);
